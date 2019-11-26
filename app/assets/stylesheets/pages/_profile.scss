@@ -47,6 +47,26 @@
   }
 }
 
+ul.menu {
+
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    li {
+      margin: 0px 30px 0px 0px;
+      padding-bottom: 30px;
+
+      a.menu-link {
+        font-size: 13px;
+      }
+    }
+    li.active {
+      border-bottom: 2px solid rgba(0,0,0,0.8);
+    }
+
+
+}
+
 
 #tab-list {
   background-color: #d6d9e1;
