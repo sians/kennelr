@@ -1,0 +1,22 @@
+<% if current_user.kennels.empty? %>
+  <p>You don't own any kennels. <%= link_to 'Add one?', new_kennel_path, class: 'smalls' %></p>
+<% else %>
+  <% current_user.kennels.each do |kennel| %>
+    <div class="kennels-profile-card">
+      <% if kennel.kennel_photos.empty? %>
+        <%= image_tag 'http://via.placeholder.com/170x100' %>
+      <% else %>
+        <%= image_tag kennel.kennel_photos.first.photo_url %>
+      <% end %>
+      <div class="kennel-details">
+        <div>
+          <h4><%= kennel.name %></h4>
+          <p><%= kennel.address %></p>
+        </div>
+        <div>
+          <p class="btn-admin">Kennel Admin</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

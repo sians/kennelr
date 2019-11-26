@@ -1,0 +1,33 @@
+.kennels-profile-card {
+  height: 210px;
+  -webkit-box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+  -moz-box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+  box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+  img {
+    width: 500px;
+    object-fit: cover;
+    height: 120px;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: 10px;
+  }
+  .kennel-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  h4 {
+    margin-left: 10px;
+  }
+  p {
+    margin: 0px 10px;
+  }
+  .btn-admin {
+    border-radius: 150px;
+    background-color: #6a85a8;
+    color: white;
+    padding: 10px 15px;
+    margin: 15px 10px 0px 0px;
+  }
+  .btn-admin:hover {
+    cursor: pointer;
+  }
+}

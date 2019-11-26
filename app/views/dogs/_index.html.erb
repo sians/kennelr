@@ -1,7 +1,8 @@
-<h6 class="pack">Your Pack  .  <%= link_to 'add a dog', new_dog_path, class: 'smalls' %></h6>
 <% if current_user.dogs.empty? %>
   <p>You haven't registered any dogs yet!  <%= link_to 'Add one?', new_dog_path, class: 'smalls' %></p>
 <% else %>
+  <h6 class="pack">Your Pack  .  <%= link_to 'add a dog', new_dog_path, class: 'smalls' %></h6>
+
   <div class="row">
     <% current_user.dogs.each do |dog| %>
     <div class="dog-card col-12 col-md-6">
@@ -9,7 +10,7 @@
         <%= image_tag photo_or_placeholder(dog), class: 'image avatar-large' %>
 
         <%= link_to bookings_path do %>
-          <% unless dog.get_active_bookings.empty? %><div class="notification"><%= dog.bookings.size %></div><% end %>
+          <% unless dog.get_active_bookings.empty? %><div class="notification"><%= dog.get_active_bookings.size %></div><% end %>
         <% end %>
       </div>
       <div class="dog-details">
