@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :kennels
   has_many :kennel_photos
+  has_many :reviews, through: :bookings
 
   mount_uploader :avatar, AvatarUploader
 
@@ -14,12 +15,14 @@ class User < ApplicationRecord
     @bookings = self.bookings.map do |booking|
       booking if booking.active
     end
+    @bookings.reject { |item| item.nil? || item == '' }
   end
 
   def get_inactive_bookings
     @bookings = self.bookings.map do |booking|
       booking unless booking.active
     end
+    @bookings.reject { |item| item.nil? || item == '' }
   end
 
 end

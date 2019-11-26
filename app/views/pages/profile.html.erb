@@ -35,73 +35,43 @@
         <h1>Hi, <%= current_user.first_name %></h1>
         <p>Joined <%= current_user.created_at %> . <%= link_to 'edit profile', edit_user_registration_path, class: 'smalls' %></p>
       </div>
-<!--       <div class="menu classic-tabs">
-        <ul class="nav" id="myClassicTab" role="tablist">
+
+      <div class="classic-tabs">
+        <ul class="menu nav" id="myClassicTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link  waves-light active show" id="dogs-tab" data-toggle="tab" href="#dogs-content"
-        role="tab" aria-controls="dogs-content" aria-selected="true" >Your Dogs</a>
+            <a class="menu-link active show" id="dogs-tab" data-toggle="tab" href="#dogs-content"
+              role="tab" aria-controls="dogs-content" aria-selected="true">Your Dogs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  waves-light active show" id="kennels-tab" data-toggle="tab" href="#kennels-content"
-        role="tab" aria-controls="kennels-content" aria-selected="false" >Your Kennels</a>
+            <a class="menu-link" id="kennels-tab" data-toggle="tab" href="#kennels-content" role="tab"
+              aria-controls="kennels-content" aria-selected="false">Your Kennels</a>
           </li>
-          <li>Your Bookings</li>
-          <li>Your Reviews</li>
+          <li class="nav-item">
+            <a class="menu-link" id="bookings-tab" data-toggle="tab" href="#bookings-content" role="tab"
+              aria-controls="bookings-content" aria-selected="false">Your Bookings</a>
+          </li>
+          <li class="nav-item">
+            <a class="menu-link" id="reviews-tab" data-toggle="tab" href="#reviews-content" role="tab"
+              aria-controls="reviews-content" aria-selected="false">Your Reviews</a>
+          </li>
         </ul>
+        <div class="tab-content" id="myClassicTabContent">
+          <div class="tab-pane fade active show" id="dogs-content" role="tabpanel" aria-labelledby="dogs-tab">
+
+            <%= render '/dogs/index' %>
+
+          </div>
+          <div class="tab-pane fade" id="kennels-content" role="tabpanel" aria-labelledby="kennels-tab">
+            <p>kennels</p>
+          </div>
+          <div class="tab-pane fade" id="bookings-content" role="tabpanel" aria-labelledby="bookings-tab">
+            <%= render 'bookings/index' %>
+          </div>
+          <div class="tab-pane fade" id="reviews-content" role="tabpanel" aria-labelledby="reviews-tab">
+            <%= render 'reviews/index' %>
+          </div>
+        </div>
       </div>
-
-      <div class="sub-details tab-content" id="myClassicTabContent">
-
-        <div class="tab-pane fade active show" id="dogs-content" role="tabpanel" aria-labelledby="dogs-tab">
-          <%#= render '/dogs/index' %>
-        </div>
-
-        <div class="tab-pane fade" id="kennels-content" role="tabpanel" aria-labelledby="kennels-tab">
-          <p>kennels</p>
-        </div>
-
-      </div> -->
-
-<div class="classic-tabs">
-  <ul class="menu nav" id="myClassicTab" role="tablist">
-    <li class="nav-item">
-      <a class="menu-link active show" id="dogs-tab" data-toggle="tab" href="#dogs-content"
-        role="tab" aria-controls="dogs-content" aria-selected="true">Your Dogs</a>
-    </li>
-    <li class="nav-item">
-      <a class="menu-link" id="kennels-tab" data-toggle="tab" href="#kennels-content" role="tab"
-        aria-controls="kennels-content" aria-selected="false">Your Kennels</a>
-    </li>
-    <li class="nav-item">
-      <a class="menu-link" id="bookings-tab" data-toggle="tab" href="#bookings-content" role="tab"
-        aria-controls="bookings-content" aria-selected="false">Your Bookings</a>
-    </li>
-    <li class="nav-item">
-      <a class="menu-link" id="reviews-tab" data-toggle="tab" href="#reviews-content" role="tab"
-        aria-controls="reviews-content" aria-selected="false">Your Reviews</a>
-    </li>
-  </ul>
-  <div class="tab-content" id="myClassicTabContent">
-    <div class="tab-pane fade active show" id="dogs-content" role="tabpanel" aria-labelledby="dogs-tab">
-
-      <%= render '/dogs/index' %>
-
-    </div>
-    <div class="tab-pane fade" id="kennels-content" role="tabpanel" aria-labelledby="kennels-tab">
-      <p>kennels</p>
-    </div>
-    <div class="tab-pane fade" id="bookings-content" role="tabpanel" aria-labelledby="bookings-tab">
-      <%= render 'bookings/index' %>
-    </div>
-    <div class="tab-pane fade" id="reviews-content" role="tabpanel" aria-labelledby="reviews-tab">
-      <p>reviews</p>
-    </div>
-  </div>
-</div>
-
-
-
-
     </div>
   </div>
 </div>
