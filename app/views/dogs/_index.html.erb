@@ -1,0 +1,26 @@
+<h6 class="pack">Your Pack  .  <%= link_to 'add a dog', new_dog_path, class: 'smalls' %></h6>
+<% if current_user.dogs.empty? %>
+  <p>You haven't registered any dogs yet!  <%= link_to 'Add one?', new_dog_path, class: 'smalls' %></p>
+<% else %>
+  <div class="row">
+    <% current_user.dogs.each do |dog| %>
+    <div class="dog-card col-12 col-md-6">
+      <div class="img-container">
+        <%= image_tag photo_or_placeholder(dog), class: 'image avatar-large' %>
+
+        <%= link_to bookings_path do %>
+          <% unless dog.get_active_bookings.empty? %><div class="notification"><%= dog.bookings.size %></div><% end %>
+        <% end %>
+      </div>
+      <div class="dog-details">
+        <h6>
+          <%= link_to dog_path(dog) do %>
+            <%= dog.name %>
+          <% end %>
+        </h6>
+        <p><%= dog.breed %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>

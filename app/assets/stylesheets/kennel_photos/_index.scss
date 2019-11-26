@@ -1,0 +1,20 @@
+.photo-container {
+  padding: 50px 50px 30px 50px;
+  .primary-photo {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.display-kennel-photos {
+  width: 900px;
+  margin: auto;
+}
+
+.stick {
+  position: sticky;
+  background-color: white;
+  top: 61px;
+}

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'reviews/index'
+  get 'reviews/new'
+  get 'reviews/create'
+  get 'reviews/edit'
+  get 'reviews/update'
   # devise_for :users
   devise_for :users, controllers: {registrations: "registrations"}
   root to: 'pages#home'

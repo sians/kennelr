@@ -13,7 +13,11 @@
 
       <div class="kennel-card">
         <div class="content">
-          <%= image_tag 'http://via.placeholder.com/300x190' %>
+          <% if kennel.kennel_photos.empty? %>
+            <%= image_tag 'http://via.placeholder.com/300x190', class: 'kennel-card-photo' %>
+          <% else %>
+            <%= image_tag kennel.kennel_photos[0].photo_url, class: 'kennel-card-photo' %>
+          <% end %>
           <div class="details">
             <div class="stars">
               <i class="fas fa-star"></i>
