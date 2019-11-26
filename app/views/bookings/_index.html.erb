@@ -1,11 +1,57 @@
 
+<h4>Upcoming</h4>
 <% current_user.get_active_bookings.each do |booking| %>
-  <%= booking.kennel.name %>
+  <div class="profile-booking-card">
+    <div class="kennel-details">
+      <% if booking.kennel.kennel_photos.empty? %>
+        <%= image_tag 'http://via.placeholder.com/170x100' %>
+      <% else %>
+        <%= image_tag booking.kennel.kennel_photos.first.photo_url %>
+      <% end %>
+      <div>
+        <h4><%= booking.kennel.name %></h4>
+        <h6><span class="highlight"><%= booking.dog.name %></span></h6>
+        <p><%= booking.start_date.strftime('%d %b, %Y') %> to <%= booking.end_date.strftime('%d %b, %Y') %></p>
+      </div>
+    </div>
+    <div class="actions">
+      <i class="fas fa-pencil-alt"></i>
+      <i class="fas fa-trash-alt"></i>
+    </div>
+  </div>
 <% end %>
 
+<% unless current_user.get_inactive_bookings.empty? %>
+  <div id="inactive-bookings">
+    <h4>Past Bookings</h4>
+    <% current_user.get_inactive_bookings.each do |booking| %>
+      <div class="profile-booking-card inactive">
+        <%# if booking.reviews.empty? %>
+<!--           <div class="btn-container">
+            <div class="btn-add-review">Review</div>
+          </div>
+ -->        <%# end %>
+        <div class="kennel-details">
+          <% if booking.kennel.kennel_photos.empty? %>
+            <%= image_tag 'http://via.placeholder.com/170x100' %>
+          <% else %>
+            <%= image_tag booking.kennel.kennel_photos.first.photo_url %>
+          <% end %>
+
+          <div>
+            <h4><%= booking.kennel.name %></h4>
+            <h6><span class="highlight"><%= booking.dog.name %></span></h6>
+            <p><%= booking.start_date.strftime('%d %b, %Y') %> to <%= booking.end_date.strftime('%d %b, %Y') %></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
 
+  <% end %>
 
+<% end %>
 
 <!-- <div class="bookings-container">
   <%#= link_to 'back to profile', profile_path, class: 'small' %>
