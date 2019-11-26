@@ -23,7 +23,11 @@
           <p>You don't own any dogs yet.</p>
           <p><%= link_to 'Register a Dog?', new_kennel_path, class: 'smalls link' %></p>
         <% else %>
-
+          <p>
+            <% current_user.dogs.each do |dog| %>
+              <%= dog.name %>
+            <% end %>
+          </p>
         <% end %>
 
 
@@ -33,7 +37,7 @@
     <div class="details">
       <div class="sub-details">
         <h1>Hi, <%= current_user.first_name %></h1>
-        <p>Joined <%= current_user.created_at %> . <%= link_to 'edit profile', edit_user_registration_path, class: 'smalls' %></p>
+        <p>Joined <%= current_user.created_at.strftime('%b, %Y') %> . <%= link_to 'edit profile', edit_user_registration_path, class: 'smalls' %></p>
       </div>
 
       <div class="classic-tabs">
@@ -57,12 +61,10 @@
         </ul>
         <div class="tab-content" id="myClassicTabContent">
           <div class="tab-pane fade active show" id="dogs-content" role="tabpanel" aria-labelledby="dogs-tab">
-
             <%= render '/dogs/index' %>
-
           </div>
           <div class="tab-pane fade" id="kennels-content" role="tabpanel" aria-labelledby="kennels-tab">
-            <p>kennels</p>
+            <%= render '/kennels/kennels_profile' %>
           </div>
           <div class="tab-pane fade" id="bookings-content" role="tabpanel" aria-labelledby="bookings-tab">
             <%= render 'bookings/index' %>
