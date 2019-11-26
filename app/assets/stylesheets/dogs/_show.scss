@@ -1,0 +1,64 @@
+.dog-container {
+  h6 {
+    margin: 0px;
+  }
+  p {
+    font-size: 13px;
+  }
+  .content {
+    display: flex;
+    padding: 15px 50px;
+    max-width: 1200px;
+    margin: auto;
+
+    .profile-box {
+      padding: 30px 10px;
+      margin: 50px 50px 0px 50px;
+      height: 600px;
+      width: 75%;
+      max-width: 400px;
+      border: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      .dog-img {
+        margin: auto;
+      }
+      .info {
+        margin: 30px 0px;
+      }
+    }
+    .details {
+      margin: 50px 50px 0px;
+      width: 100%;
+      height: 600px;
+      h1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .smalls {
+        margin-left: 15px;
+        font-size: 13px;
+        color: rgba(0,0,0,0.7);
+        font-style: italic;
+      }
+      h4 {
+        margin-bottom: 30px;
+      }
+      .sub-details, .kennel-bookings {
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        h6.pack {
+          padding-bottom: 20px;
+        }
+      }
+      .kennel-bookings {
+        height: 485px;
+        overflow: scroll;
+      }
+    }
+  }
+
+}

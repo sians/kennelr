@@ -1,0 +1,28 @@
+<div class="bookings-container">
+  <%= link_to 'back to profile', profile_path, class: 'small' %>
+  <div class="content">
+    <div class="active-bookings">
+      <h4>Your Active Bookings</h4>
+      <% current_user.get_active_bookings.each do |booking| %>
+        <div class="booking-card">
+          <div class="header">
+            <%= image_tag 'http://via.placeholder.com/350x160', class: 'kennel-photo' %>
+
+            <div class="dog-avatar"><%= image_tag photo_or_placeholder(booking.dog), class: 'image avatar-md' %></div>
+          </div>
+          <div class="details">
+            <h5><%= link_to booking.kennel.name, kennel_path(booking.kennel) %></h5>
+            <p><%= booking.start_date.strftime('%d %b, %Y') %> to <%= booking.end_date.strftime('%d %b, %Y') %></p>
+            <p><%= (booking.end_date - booking.start_date).abs %> days</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="past-bookings">
+      <h4>Your Booking History</h4>
+
+    </div>
+
+
+  </div>
+</div>

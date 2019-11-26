@@ -1,0 +1,16 @@
+.main-container {
+  display: flex;
+  .kennels-index {
+    padding: 145px 15px;
+    width: 60%;
+    height: 100%;
+    overflow: scroll;
+    position: absolute;
+  }
+  #map {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+  }
+}

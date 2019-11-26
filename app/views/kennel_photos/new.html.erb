@@ -1,0 +1,11 @@
+<div class="kennel-photo-form" style="width: 500px; margin: auto;">
+  <%= simple_form_for([@kennel, @kennel_photo]) do |f| %>
+
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+
+      <%= f.button :submit, class: "btn-kennelr"%>
+  <% end %>
+</div>
+
+

@@ -1,0 +1,39 @@
+
+<div class="show-container">
+  <h3><%= @kennel.name %></h3>
+  <div class="stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <% if @kennel.total_rating.nil? %>
+      <span class="small">(No reviews yet)  .  </span><%= @kennel.address %>
+    <% end %>
+  </div>
+</div>
+
+<div class="show-nav">
+  <ul>
+    <li><%= link_to 'Overview', kennel_path(@kennel) %></li>
+    <li class="active"><%= link_to 'Photos', kennel_photos_path(@kennel)%></li>
+    <li>Reviews</li>
+    <li>Location</li>
+  </ul>
+</div>
+
+<div class="show-container">
+  <div class="hero">
+    <% if @kennel.kennel_photos.empty? %>
+
+    <% elsif @kennel.kennel_photos.size >= 3 %>
+      <%= image_tag @kennel.kennel_photos[0].photo_url, class: 'primary-photo' %>
+      <div class='secondary-photos'>
+        <%= image_tag @kennel.kennel_photos[1].photo_url %>
+        <%= image_tag @kennel.kennel_photos[2].photo_url %>
+      </div>
+    <% else %>
+      <%= image_tag @kennel.kennel_photos.first.photo_url %>
+    <% end %>
+  </div>
+</div>

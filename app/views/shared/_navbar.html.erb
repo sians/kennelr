@@ -1,0 +1,27 @@
+<div class="navbar fixed-top navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand" do %>
+  <div class="logo d-flex">
+    <!-- <p><img src="https://res.cloudinary.com/djkvtunck/image/upload/v1568307147/snailio_i0c6ac.png" alt=""></p> -->
+    <h4>kennelr</h4>
+  </div>
+  <% end %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <span class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</span>
+          <div class="dropdown-menu dropdown-menu-right menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Profile", profile_path, class: "dropdown-item navmenu-item" %>
+            <%#= link_to "About Overland", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item navmenu-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

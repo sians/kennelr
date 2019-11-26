@@ -1,0 +1,92 @@
+.dog-card {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  .img-container {
+    position: relative;
+    .notification {
+      position: absolute;
+      height:  20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      text-align: center;
+      font-size: 10px;
+      padding-top: 3px;
+      top: 0;
+    }
+  }
+  .dog-details {
+    padding: 10px;
+    p {
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+}
+
+.kennel-card {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  img {
+    border-radius: 2px;
+  }
+  .content {
+    display: flex;
+    margin:  15px 0px;
+    .details {
+      margin-left: 15px;
+      .stars {
+        color: #d6d9e1;
+        padding: 10px 0px;
+      }
+      h4 {
+
+      }
+    }
+  }
+}
+
+
+.booking-card {
+  height: 300px;
+  width: 350px;
+  -webkit-box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+  -moz-box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+  box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+  border-radius: 3px;
+  p {
+    font-size: 13px;
+  }
+  .header {
+    position: relative;
+    margin-bottom: 10px;
+    img.kennel-photo {
+      border-radius: 3px 3px 0px 0px;
+    }
+    .dog-avatar {
+      position: absolute;
+      top: 130px;
+      left: 270px;
+
+    }
+  }
+  .details {
+    padding: 10px;
+  }
+}
+
+.dog-booking-card {
+  height: 80px;
+  padding: 20px 40px;
+  border-radius: 3px;
+  border-left: 3px solid rgba(0,0,0,0.3);
+  -webkit-box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+  -moz-box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+  box-shadow: 10px 10px 30px -18px rgba(0,0,0,0.45);
+}
+
+
+
+

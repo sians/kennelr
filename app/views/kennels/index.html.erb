@@ -1,0 +1,44 @@
+<%= render 'kennel_filter' %>
+<div class="main-container">
+  <div class="kennels-index">
+    <h3>
+      <% if @kennels.empty? %>
+        No kennels found nearby!
+      <% else %>
+        Found <%= @kennels.size %> kennel<% if @kennels.size > 1 %>s <% end %>
+        nearby!
+      <% end %>
+    </h3>
+    <% @kennels.each do |kennel| %>
+
+      <div class="kennel-card">
+        <div class="content">
+          <%= image_tag 'http://via.placeholder.com/300x190' %>
+          <div class="details">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <% if kennel.total_rating.nil? %>
+                <span class="small">(No reviews yet)</span>
+              <% end %>
+            </div>
+
+            <h4><%= link_to kennel.name, kennel_path(kennel) %></h4>
+
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+  <div>
+    <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+</div>

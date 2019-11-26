@@ -3,14 +3,32 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>kennelr</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" href="https://use.typekit.net/xrn7hop.css">
+
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= yield %>
+    <%= render 'shared/navbar' %>
+
+    <% unless notice.nil? %>
+      <p class="alerts notice"><%= notice %></p>
+    <% end %>
+    <% unless alert.nil? %>
+      <p class="alerts alert"><%= alert %></p>
+    <% end %>
+
+    <div <% unless params[:controller] == 'kennels' && params[:action] == "index"%>class="page-container"<% end %>>
+      <%= yield %>
+    </div>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

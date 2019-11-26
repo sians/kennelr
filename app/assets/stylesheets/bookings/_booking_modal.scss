@@ -1,0 +1,63 @@
+#booking-modal {
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  .details {
+    padding-top: 10px;
+    .kennel-name-card {
+      display: flex;
+      width: 100%;
+      img {
+        width: 100px;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+    }
+    .guests {
+      margin-top: 30px;
+      .dog-img {
+        opacity: 0.4;
+        margin-right: 20px;
+      }
+      .selected-dog {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  #booking_start_date, #booking_end_date {
+    display: none;
+  }
+  label.string {
+    display: none;
+  }
+
+  .calendars {
+    display: flex;
+
+    .flatpickr-calendar {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      margin-left: 30px;
+      // .flatpickr-day.selected.startRange {
+      //   background-color: #778596;
+      //   border-radius: 150px;
+
+      // }
+      // .flatpickr-day.inRange {
+      //   -webkit-box-shadow: none;
+      //   margin-left: 30px;
+      //   border-radius: 150px;
+      // }
+      // .flatpickr-day.selected.endRange {
+      //   background-color: #778596;
+      //   border-radius: 150px;
+
+      // }
+    }
+
+
+  }
+
+}

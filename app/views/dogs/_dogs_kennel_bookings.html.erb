@@ -1,0 +1,22 @@
+<div class="kennel-bookings">
+  <h4><%= @dog.name %>'s kennel bookings</h4>
+  <% if @dog.bookings.empty? %>
+    <h6><%= @dog.name %> hasn't stayed at any kennels yet!</h6>
+  <% else %>
+    <% if @dog.get_active_bookings.present? %>
+      <% @dog.get_active_bookings.each do |booking| %>
+        <div class="dog-booking-card">
+          <h6><%= booking.kennel.name %></h6>
+          <p><%= booking.start_date.strftime('%d %b, %Y') %> to <%= booking.end_date.strftime('%d %b, %Y') %></p>
+        </div>
+      <% end %>
+    <% elsif @dog.get_inactive_bookings.present? %>
+      <% @dog.get_inactive_bookings.each do |booking| %>
+        <div class="dog-booking-card inactive">
+          <h6><%= booking.kennel.name %></h6>
+          <p><%= booking.start_date.strftime('%d %b, %Y') %> to <%= booking.end_date.strftime('%d %b, %Y') %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

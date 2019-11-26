@@ -1,0 +1,34 @@
+<%= simple_form_for(@dog) do |f| %>
+    <div class="input-field">
+      <%= f.input :name,
+                  label: false,
+                  placeholder: "Notorious P.U.G." %>
+    </div>
+    <div class="input-field">
+      <%= f.input :age,
+                  label: false,
+                  placeholder: "4" %>
+    </div>
+    <div class="input-field">
+      <%= f.input :breed,
+                  label: false,
+                  placeholder: "Pug" %>
+    </div>
+    <div class="input-field">
+      <%= f.input :dietry_requirements,
+                  label: false,
+                  placeholder: "Not allowed hotdogs." %>
+    </div>
+    <div class="input-field">
+      <%= f.input :medications,
+                  label: false,
+                  placeholder: "Must have at least 10 ear scritches a day." %>
+    </div>
+    <div class="input-field">
+      <%= f.input :picture %>
+      <%= f.input :picture_cache, as: :hidden %>
+    </div>
+
+
+    <%= f.button :submit, class: "btn-kennelr"%>
+<% end %>

@@ -1,0 +1,76 @@
+<!--
+
+ - user details box with edit button
+ - bootstrap tabs for:
+   - my dogs
+   - my kennels (unless kennels.nil?)
+   - my bookings
+   - my reviews
+ -
+
+ -->
+<div class="profile-container">
+  <div class="content">
+    <div class="profile-box">
+      <%= image_tag avatar_or_placeholder(current_user),  class: 'profile-img avatar-v-large' %>
+
+      <div class="info">
+        <h6>Name:</h6>
+        <p><%= current_user.first_name %></p>
+
+        <h6>Email:</h6>
+        <p><%= current_user.email %></p>
+
+        <h6>Kennel Owner:</h6>
+        <% if current_user.kennels.empty? %>
+          <p>You are not a kennel owner.</p>
+          <p><%= link_to 'Register a Kennel?', new_kennel_path, class: 'smalls' %></p>
+        <% else %>
+          <p>Manage your kennels</p>
+        <% end %>
+
+
+
+      </div>
+
+    </div>
+    <div class="details">
+      <div class="sub-details">
+        <h1>Hi, <%= current_user.first_name %></h1>
+        <p>Joined <%= current_user.created_at %> . <%= link_to 'edit profile', edit_user_registration_path, class: 'smalls' %></p>
+      </div>
+      <div class="sub-details">
+        <h6 class="pack">Your Pack  .  <%= link_to 'add a dog', new_dog_path, class: 'smalls' %></h6>
+        <% if current_user.dogs.empty? %>
+          <p>You haven't registered any dogs yet!  <%= link_to 'Add one?', new_dog_path, class: 'smalls' %></p>
+        <% else %>
+          <div class="row">
+            <% current_user.dogs.each do |dog| %>
+            <div class="dog-card col-12 col-md-6">
+              <div class="img-container">
+                <%= image_tag photo_or_placeholder(dog), class: 'image avatar-large' %>
+
+                <%= link_to bookings_path do %>
+                  <% unless dog.get_active_bookings.empty? %><div class="notification"><%= dog.bookings.size %></div><% end %>
+                <% end %>
+              </div>
+              <div class="dog-details">
+                <h6>
+                  <%= link_to dog_path(dog) do %>
+                    <%= dog.name %>
+                  <% end %>
+                </h6>
+                <p><%= dog.breed %></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="sub-details">
+        <p>Your reviews</p>
+      </div>
+    </div>
+  </div>
+</div>
+

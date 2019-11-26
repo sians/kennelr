@@ -1,1 +1,48 @@
-// Specific CSS for your home-page
+.home-container {
+  width: 100%;
+  height: calc(100vh -  61px);
+  background-image: url("doggo-bg.png");
+  background-size: cover;
+  background-repeat: none;
+  background-position: bottom right;
+  display: flex;
+  align-items: center;
+}
+
+.home-search-form {
+  width: 400px;
+  height: 300px;
+  padding-right: 100px;
+  background-color: white;
+  margin-left: 100px;
+  margin-top: -50px;
+  padding: 25px;
+  -webkit-box-shadow: 10px 10px 38px 0px rgba(176,175,181,1);
+  -moz-box-shadow: 10px 10px 38px 0px rgba(176,175,181,1);
+  box-shadow: 10px 10px 38px 0px rgba(176,175,181,1);
+  .form-group {
+    margin-top: 20px;
+  }
+  .address-input {
+    border: 1px solid rgba(0,0,0,0.1);
+    margin: 5px 0px;
+  }
+}
+
+.alerts {
+  position: fixed;
+  height: 50px;
+  top: 71px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 3px;
+  color: rgba(0,0,0,0.5);
+}
+
+.notice {
+  background-color: #b7d4ca;
+}
+
+.alert {
+  background-color: #cc9898;
+}

@@ -1,0 +1,43 @@
+<div class="dog-container">
+  <div class="content">
+    <div class="profile-box">
+      <%= image_tag photo_or_placeholder(@dog),  class: 'dog-img avatar-v-large' %>
+      <div class="info">
+        <h6>Breed:</h6>
+        <p><%= @dog.breed %></p>
+
+        <h6>Age:</h6>
+        <p><%= @dog.age %></p>
+
+        <h6>Dietry Requirments:</h6>
+        <p>
+          <% if @dog.dietry_requirements.nil? || @dog.dietry_requirements.empty? %>
+            none
+          <% else %>
+            <%= @dog.dietry_requirements %>
+          <% end %>
+        </p>
+
+        <h6>Medications:</h6>
+        <p>
+          <% if @dog.medications.nil? || @dog.medications.empty? %>
+            none
+          <% else %>
+            <%= @dog.medications %>
+          <% end %>
+        </p>
+
+        <h6>Vet:</h6>
+
+      </div>
+    </div>
+      <div class="details">
+        <div class="sub-details">
+          <h1><%= @dog.name %>  <span class="smalls"><%= link_to 'edit', edit_dog_path(@dog) %></span></h1>
+        </div>
+
+        <%= render 'dogs_kennel_bookings' %>
+
+      </div>
+  </div>
+</div>

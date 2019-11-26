@@ -1,0 +1,29 @@
+.filter {
+  height: 60px;
+  position: fixed;
+  top: 61px;
+  width: 100%;
+  background-color: white;
+  z-index: 900;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  ul {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.btn-filter {
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 150px;
+  padding: 8px 14px;
+  margin: 10px 0px 5px 10px;
+}
+
+.btn-filter:hover {
+  border: 1px solid rgba(0,0,0,0.7);
+  cursor: pointer;
+}

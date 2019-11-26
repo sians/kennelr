@@ -1,0 +1,40 @@
+<div id="booking-modal">
+  <div class="details">
+    <div class="kennel-name-card">
+      <% if @kennel.kennel_photos.present? %>
+        <%= image_tag @kennel.kennel_photos.first.photo_url %>
+      <% end %>
+      <div>
+        <h4><%= @kennel.name %></h4>
+        <p>Owned by <%= @kennel.user.first_name %></p>
+      </div>
+    </div>
+    <div class="guests">
+      <h5>Guests</h5>
+      <div id="dog-list">
+        <% current_user.dogs.each do |dog| %>
+          <%= image_tag photo_or_placeholder(dog),  class: 'dog-img add-dog avatar-large', id: dog.id %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="widget-content" data-unavailable="<%= @kennel.unavailable_dates.to_json %>">
+
+  <%= simple_form_for([@kennel, @booking]) do |f| %>
+    <div class="calendars">
+      <%= hidden_field_tag :hidden_dog_list %>
+      <%= f.input :start_date, as: :hidden %>
+
+      <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+    </div>
+
+        <a class="input-button" title="clear" data-clear>
+        <i class="icon-close"></i>
+    </a>
+
+    <%= f.submit "book", class: "btn btn-kennelr", id: 'dog-booking-submit' %>
+  <% end %>
+
+
+</div>

@@ -1,0 +1,41 @@
+<%= simple_form_for(current_user) do |f| %>
+    <div class="input-field">
+      <%= f.input :email,%>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+    </div>
+    <div class="input-field">
+      <%= f.input :password,
+                  label: false,
+                  placeholder: "New password",
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="input-field">
+      <%= f.input :password_confirmation,
+                  label: false,
+                  placeholder: "Confirm new password",
+                  required: false,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="login-input-field">
+      <%= f.input :current_password,
+                  label: false,
+                  placeholder: "Current password",
+                  hint: "we need your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password" } %>
+    </div>
+    <div class="login-input-field">
+      <%= f.input :avatar,
+                  label_html:
+                    { class: 'upload-photo'},
+                  label: 'Upload a photo' %>
+      <%#= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+      <%= f.input :avatar_cache, as: :hidden %>
+    </div>
+
+    <%= f.button :submit, class: "btn-kennelr"%>
+<% end %>

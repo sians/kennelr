@@ -11,3 +11,36 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// M Y.   S T Y L E S.
+@import "kennels/kennels";
+@import "kennels/show";
+@import "kennels/filters";
+@import "pages/profile";
+@import "bookings/index";
+@import "dogs/show";
+@import "devise/devise";
+@import "components/button";
+@import "bookings/booking_modal";
+
+@import "components/card";
+
+.page-container {
+  margin-top: 61px;
+  // padding: 20px;
+}
+
+body {
+  // background-color: #f8f7fc;
+  background-color: #fff;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
