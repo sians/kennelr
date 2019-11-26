@@ -63,9 +63,13 @@
 
     <div class="form">
       <h4>Add your dates</h4>
-      <div class="widget-content" data-unavailable="<%= @kennel.unavailable_dates.to_json %>">
+      <% if current_user.dogs.empty? %>
+        <p><%= link_to 'Add a dog', new_dog_path, class: 'link' %> before you can request a booking!</p>
+      <% else %>
+        <div class="widget-content" data-unavailable="<%= @kennel.unavailable_dates.to_json %>">
 
-      <%= render './bookings/booking_form' %>
+        <%= render './bookings/booking_form' %>
+      <% end %>
     </div>
   </section>
   <div class="show-container location">
