@@ -1,8 +1,36 @@
-<%= simple_form_for([@kennel, @booking]) do |f| %>
+<div id="booking-section">
+  <div class="widget-content" data-unavailable="<%= @kennel.unavailable_dates.to_json %>">
+  <%= simple_form_for([@kennel, @booking]) do |f| %>
+    <div class="calendars">
+      <%= hidden_field_tag :hidden_dog_list %>
+      <%= f.input :start_date, as: :hidden, placeholder: "From" %>
 
-  <%= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+      <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+    </div>
 
-  <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+        <a class="input-button" title="clear" data-clear>
+        <i class="icon-close"></i>
+    </a>
+    <div class="guests">
+      <h5>Booking for:</h5>
+      <div id="dog-list">
+        <% current_user.dogs.each do |dog| %>
+          <%= image_tag photo_or_placeholder(dog),  class: 'dog-img add-dog avatar-large', id: dog.id %>
+        <% end %>
+      </div>
+    </div>
 
-  <%= f.submit "book", class: "btn btn-kennelr" %>
-<% end %>
+
+    <%= f.submit "Request to Book", class: "btn btn-kennelr", id: 'dog-booking-submit' %>
+  <% end %>
+
+</div>
+
+<%#= simple_form_for([@kennel, @booking]) do |f| %>
+
+  <%#= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+
+  <%#= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+
+  <%#= f.submit "book", class: "btn btn-kennelr" %>
+<%# end %>

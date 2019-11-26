@@ -44,7 +44,7 @@ const toggleDateInputs = function() {
     flatpickr(startDateInput, {
       minDate: 'today',
       dateFormat: 'd-m-Y',
-      inline: true,
+      // inline: true,
       disable: unvailableDates,
       onChange: function(selectedDates, selectedDate) {
         console.log("onchange")
@@ -62,7 +62,7 @@ const toggleDateInputs = function() {
       flatpickr(endDateInput, {
         dateFormat: 'd-m-Y',
         disable: unvailableDates,
-        inline: true
+        // inline: true
       });
   }
 };
