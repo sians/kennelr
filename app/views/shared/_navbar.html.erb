@@ -5,6 +5,9 @@
     <h4>kennelr</h4>
   </div>
   <% end %>
+  <% unless params[:action] == 'home' %>
+    <%= render 'shared/search' %>
+  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">

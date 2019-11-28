@@ -1,0 +1,15 @@
+.nav-search {
+  display:  flex;
+  // margin-right: 100px;
+  position: relative;
+  input {
+    width: 310px;
+    font-size: 12px;
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  .btn-icon {
+    border-radius: 5px;
+  }
+}
